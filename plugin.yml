@@ -4,3 +4,10 @@ version: 1.0
 author: Alex "MrOkun" Okunev
 api-version: 1.21.7
 description: A plugin provides commands for player's health manipulation.
+
+commands:
+  healthmanipulation:
+    description: ToDo
+    usage: /healthmanipulation <set|increase|decrease> [player] <amount>
+    permission: healthmanipulation.all
+
