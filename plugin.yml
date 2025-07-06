@@ -1,0 +1,6 @@
+main: Team303.MrOkun.HealthManipulation
+name: HealthManipulation
+version: 1.0
+author: Alex "MrOkun" Okunev
+api-version: 1.21.7
+description: A plugin provides commands for player's health manipulation.
