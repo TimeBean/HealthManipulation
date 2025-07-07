@@ -1,13 +1,13 @@
-main: Team303.MrOkun.HealthManipulation
+main: src.main.java.team303.MrOkun.HealthManipulation
 name: HealthManipulation
 version: 1.0
 author: Alex "MrOkun" Okunev
-api-version: 1.21.7
+api-version: 1.21.4
 description: A plugin provides commands for player's health manipulation.
 
 commands:
   healthmanipulation:
     description: ToDo
     usage: /healthmanipulation <set|increase|decrease> [player] <amount>
-    permission: healthmanipulation.all
+    permission: healthmanipulation.use
 

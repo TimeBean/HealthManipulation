@@ -1,6 +1,6 @@
-package Team303.MrOkun.Commands;
+package src.main.java.team303.MrOkun.Commands;
 
-import Team303.MrOkun.HealthHandler;
+import src.main.java.team303.MrOkun.HealthHandler;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -8,16 +8,16 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class HealthCommand implements CommandExecutor {
-    private final HealthHandler handler;
+    private final HealthHandler _handler;
 
     public HealthCommand() {
-        this.handler = new HealthHandler();
+        this._handler = new HealthHandler();
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (args.length < 2 || args.length > 3) {
-            sender.sendMessage("Usage: /" + label + " <set|increase|decrease> [player] <amount>");
+            sender.sendMessage("Usage: /" + label + " <set||increase||decrease> [player] <amount>");
             return true;
         }
 
@@ -51,13 +51,13 @@ public class HealthCommand implements CommandExecutor {
 
         switch (action) {
             case "set":
-                handler.setHealth(target, amount);
+                _handler.setHealth(target, amount);
                 break;
             case "increase":
-                handler.changeHealth(target, amount);
+                _handler.changeHealth(target, amount);
                 break;
             case "decrease":
-                handler.changeHealth(target, -amount);
+                _handler.changeHealth(target, -amount);
                 break;
             default:
                 sender.sendMessage("Unknown action '" + action + "'. Use set, increase, or decrease.");
