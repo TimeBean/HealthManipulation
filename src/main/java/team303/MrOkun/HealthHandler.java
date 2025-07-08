@@ -4,9 +4,7 @@ import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Player;
 
 public class HealthHandler {
-    private boolean _changeHealthProportionally = true;
-
-    public void setHealth(Player player, double newMaxHealth) {
+    public void setHealth(Player player, double newMaxHealth, boolean changeHealthProportionaly) {
         var maxHealthAttribute = player.getAttribute(Attribute.MAX_HEALTH);
         if (maxHealthAttribute == null) {
             return;
@@ -17,7 +15,7 @@ public class HealthHandler {
 
         maxHealthAttribute.setBaseValue(newMaxHealth);
 
-        if (_changeHealthProportionally && previousMax > 0) {
+        if (changeHealthProportionaly && previousMax > 0) {
             double healthPercent = previousHealth / previousMax;
             player.setHealth(Math.min(healthPercent * newMaxHealth, newMaxHealth));
         }
@@ -31,15 +29,8 @@ public class HealthHandler {
         var maxHealthAttribute = player.getAttribute(Attribute.MAX_HEALTH);
 
         double previousMax = maxHealthAttribute.getBaseValue();
-        double previousHealth = player.getHealth();
-
         var newMaxHealth = previousMax + amount;
 
         maxHealthAttribute.setBaseValue(newMaxHealth);
-
-        if (_changeHealthProportionally && previousMax > 0) {
-            double healthPercent = previousHealth / previousMax;
-            player.setHealth(Math.min(healthPercent * newMaxHealth, newMaxHealth));
-        }
     }
 }

@@ -51,7 +51,7 @@ public class HealthCommand implements CommandExecutor {
 
         switch (action) {
             case "set":
-                _handler.setHealth(target, amount);
+                _handler.setHealth(target, amount, true);
                 break;
             case "increase":
                 _handler.changeHealth(target, amount);
